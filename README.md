@@ -29,7 +29,7 @@ This project demonstrates a modern user interface with form input validation and
 
 ## 🖼️ Screenshot
 
-![Login Form Screenshot](images/background.jpg)
+![Login Form Screenshot](images/screenshot.png.jpg)
 
 ---
 
