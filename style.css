@@ -161,3 +161,10 @@ body {
 .register-link p a:hover {
   text-decoration: underline;
 }
+
+
+@media (max-width: 480px) {
+  .wrapper{
+    width: 90%;
+  }
+}
