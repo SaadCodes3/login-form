@@ -164,7 +164,20 @@ body {
 
 
 @media (max-width: 480px) {
-  .wrapper{
+   .wrapper {
     width: 90%;
+    padding: 20px;
+  }
+
+  .wrapper h1 {
+    font-size: 28px;
+  }
+
+  .input-box {
+    height: 45px;
+  }
+
+  .btn-donate {
+    font-size: 0.95rem;
   }
 }
