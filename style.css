@@ -8,28 +8,41 @@
 }
 :root {
   /* colors */
-  --white-color:#ffffff;
+  --white-color: #ffffff;
+  --black-color: #000;
 }
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url('images/background.jpg') no-repeat;
+  background: url("images/background.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.wrapper{
+.wrapper {
   width: 420px;
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, .2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: var(--white-color);
   border-radius: 10px;
   padding: 30px 40px;
+  /* animation */
+  animation: fadeIn 0.6s ease-in-out;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .wrapper h1 {
@@ -44,34 +57,35 @@ body{
   margin: 30px 0;
 }
 
-.input-box input{
+.input-box input {
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.15);
   border: none;
   outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
   font-size: 16px;
+  font-weight: 500;
   color: var(--white-color);
   padding: 20px 45px 20px 20px;
 }
 
-.input-box input:hover{
-  border-radius: 40px;
-  border: 2px solid black;
-}
 .input-box input::placeholder {
   color: var(--white-color);
 }
 
-.input-box i{
+.input-box input:focus {
+  border-color: #0a82fa;
+  box-shadow: 0 0 8px rgba(77,166,255,0.6);
+}
+
+.input-box i {
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-
 }
 
 .wrapper .remember-forgot {
@@ -81,31 +95,55 @@ body{
   margin: -15px 0 15px;
 }
 
-.remember-forgot label input{
+.remember-forgot label input {
   accent-color: var(--white-color);
   margin-right: 3px;
 }
 
-.remember-forgot a{
+.remember-forgot a {
   color: var(--white-color);
   text-decoration: none;
 }
 
-.remember-forgot a:hover{
+.remember-forgot a:hover {
   text-decoration: underline;
 }
 
-.wrapper .btn{
-  width: 100%;
-  height: 45px;
-  background: var(--white-color);
-  border: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+/* From Uiverse.io by Allyhere */
+.btn-donate {
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
   cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  font-weight: 600;
+  padding: 0.9em 1.4em;
+  min-height: 44px;
+  font-size: var(--size, 1rem);
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+  border: none;
+  border-radius: var(--radii);
+  color: var(--btn-bg-color);
+  box-shadow:
+    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+    inset -4px -4px 8px rgba(19, 95, 216, 0.35),
+    2px 2px 15px #333;
+
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-donate:hover {
+  background-position: right top;
 }
 
 .wrapper .register-link {
@@ -114,12 +152,12 @@ body{
   margin: 20px 0 15px;
 }
 
-.register-link p a{
+.register-link p a {
   color: var(--white-color);
   text-decoration: none;
   font-weight: 600;
 }
 
-.register-link p a:hover{
+.register-link p a:hover {
   text-decoration: underline;
 }
